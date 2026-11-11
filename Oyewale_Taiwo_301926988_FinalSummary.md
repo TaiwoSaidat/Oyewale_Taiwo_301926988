@@ -47,7 +47,15 @@ I kept player, game, score_entry in separate tables so their details could be ma
 
 ## AI-use declaration
 
-I used GitHub Copilot and the portfolio generator to help prepare the database model, scripts and explanations. The generator ran the PostgreSQL and MongoDB exercises, checked their outputs and captured the result images.  I remain responsible for checking and explaining the submitted work.
+I used GitHub Copilot for proof reading and the portfolio generator to help prepare the database model, scripts and explanations. The generator ran the PostgreSQL and MongoDB exercises, checked their outputs and captured the result images.  I was responsible for checking and explaining the submitted work. I re-ran each portfolio’s commands in a fresh environment, compared the output with the README tables, corrected the two inconsistencies I found, and checked all links and claims against the scripts
+
+- P1: Re-ran the schema, sample data and all 9 constraint tests in a fresh database; confirmed each failed at the named constraint and the final counts stayed 1/1/1. Compared the design/ER/normalisation documents with P1_Schema.sql; confirmed PKs, FKs, unique keys and the score >= 0 check match, and that joining the 3NF tables reproduces the sample row.
+- P2: Re-ran all three queries and confirmed row counts (1, 1, one group); re-ran the index experiment and confirmed the plan changed from Seq Scan to Bitmap Index Scan using p2_filter_idx. Checked that the 10,000 benchmark rows are generated in a separate query_lab table, not added to the case data.
+- P3: Ran the commit/rollback sequence and confirmed uncommitted values stayed hidden and ROLLBACK restored 1; repeated the two-session test and observed Session B waiting and the final results 2 versus 3.
+- P4: Re-ran the MongoDB script against a fresh portfolio_nosql database; confirmed 2 inserts, query results 1/2/2/2 groups, error codes 121 and 11000, and final count 2. Checked the date explanation: 2030 is the synthetic event time, while 2026 is the copied source timestamp.
+- P5: Checked that the document clearly says “proposed only,” that no live deployment is claimed, and that the architecture image path resolves.
+
+- Documentation: Cross-checked README claims against the scripts and corrected the INTEGER/BIGINT mismatch and the “four”/“two” event comment. Followed each README’s run order from a clean checkout and verified the documented expected outputs; checked that all relative links and screenshots open.
 
 ## References
 
