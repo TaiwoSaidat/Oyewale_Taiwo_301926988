@@ -19,7 +19,7 @@ erDiagram
         bigint entry_id PK
         bigint player_id FK
         bigint game_id FK
-        integer score
+        bigint score
         timestamptz achieved_at
         text season_code
         text submission_key UK

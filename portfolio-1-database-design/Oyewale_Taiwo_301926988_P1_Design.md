@@ -49,7 +49,7 @@ My case study records player, game, score_entry.
 | entry_id | BIGINT | PK | Yes |
 | player_id | BIGINT | FK | Yes |
 | game_id | BIGINT | FK | Yes |
-| score | INTEGER |  | Yes |
+| score | BIGINT |  | Yes |
 | achieved_at | TIMESTAMPTZ |  | Yes |
 | season_code | TEXT |  | Yes |
 | submission_key | TEXT | Unique | Yes |

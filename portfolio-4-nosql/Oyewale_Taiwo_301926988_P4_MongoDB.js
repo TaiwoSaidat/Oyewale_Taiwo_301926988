@@ -86,7 +86,7 @@
     validationLevel: 'strict', validationAction: 'error'
   });
 
-  // Insert the four example events and show their IDs.
+  // Insert the two example events and show their IDs.
   printjson(await db.getCollection("leaderboard_events").insertMany([
     {
         "_id": "event_000001",
